@@ -1,33 +1,33 @@
 # React App
 
-App for learn react as a web dev and make statiscal web
+App for learn react as a web dev and make statistical web
 
-## Learn react as a web dev
+## Architecture
 
-These part can re-use and update general for project
+### Stack
 
-### `/assets/scss`
+* components
 
-### `/components`
+* hooks
 
-Atomic design
+  * `[customHook].ts`
 
-### `/hooks`
+* core
 
-* Hooks logic with useEffect,...
+  * `interfaces.ts`
 
-### `/utils`
+  * `constants.ts`
 
-* Helper modules.
+* utils
 
-## Specific Project code
+  * `[module].ts`
 
-* required:
+* store
 
-  * `/pages` tree pages with router
+* pages
 
-  * `/core` constants, interfaces, functions for project
+* `[stack].tsx`
 
-* optional:
+### Stack in Stack = App
 
-  * `/store` state management and handle api
+App have one more other parts: `assets`(img + css)
