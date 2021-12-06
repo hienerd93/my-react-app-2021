@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useState } from "react";
-import { fakeAuthProvider } from "../core/constants";
-import { AuthContextType } from "../core/interfaces";
+import { fakeAuthProvider } from "./fakeAuthProvider";
+import { AuthContextType } from "../data/interfaces";
 
 export const AuthContext = createContext<AuthContextType>(null!);
 

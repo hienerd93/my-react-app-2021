@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import DashBoard from "./DashBoard/DashBoard";
-import LoginPage from "./Login/Login";
-import AuthProvider from "./Login/store/AuthProvider";
-import RequireAuth from "./Login/utils/requireAuth";
+import DashBoard from "./pages/DashBoard";
+import LoginPage from "./pages/Login";
+import AuthProvider from "./store/AuthProvider";
+import RequireAuth from "./utils/requireAuth";
 import Layout from "./pages/Layout";
 
 const App = () => {
