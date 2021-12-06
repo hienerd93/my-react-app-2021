@@ -1,5 +1,8 @@
+import { Typography } from "antd";
+
 const DashBoard = () => {
-  return <h3>Protected</h3>;
-}
+  const { Text } = Typography;
+  return <Text>Protected</Text>;
+};
 
 export default DashBoard;

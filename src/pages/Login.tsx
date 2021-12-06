@@ -1,3 +1,4 @@
+import { Button, Typography } from "antd";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
@@ -5,6 +6,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const auth: any = useAuth();
+  const { Paragraph } = Typography;
 
   const from = location.state?.from?.pathname || "/dashboard";
 
@@ -21,13 +23,13 @@ const LoginPage = () => {
 
   return (
     <div>
-      <p>You must log in to view the page at {from}</p>
+      <Paragraph>You must log in to view the page at {from}</Paragraph>
 
       <form onSubmit={handleSubmit}>
         <label>
           Username: <input name="username" type="text" />
         </label>{" "}
-        <button type="submit">Login</button>
+        <Button>Login</Button>
       </form>
     </div>
   );

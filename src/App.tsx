@@ -5,11 +5,14 @@ import LoginPage from "./pages/Login";
 import AuthProvider from "./store/AuthProvider";
 import RequireAuth from "./utils/requireAuth";
 import Layout from "./pages/Layout";
+import { Typography } from "antd";
 
 const App = () => {
+  const { Title } = Typography;
+
   return (
     <AuthProvider>
-      <h1>Auth Example</h1>
+      <Title>Auth Example</Title>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<LoginPage />} />

@@ -1,25 +1,28 @@
-import { useNavigate } from "react-router";
-import useAuth from "../hooks/useAuth";
+import { Button, Typography } from "antd";
+import { AuthContextType } from "../data/interfaces";
 
-const AuthStatus = () => {
-  let auth: any = useAuth();
-  let navigate = useNavigate();
+type AuthStatusProps = {
+  auth: AuthContextType;
+  onClick: () => void;
+};
 
+const AuthStatus = ({ auth, onClick }: AuthStatusProps) => {
+  const { Paragraph } = Typography;
   if (!auth.user) {
-    return <p>You are not logged in.</p>;
+    return <Paragraph>You are not logged in.</Paragraph>;
   }
 
   return (
-    <p>
+    <Paragraph>
       Welcome {auth.user}!{" "}
-      <button
+      <Button
         onClick={() => {
-          auth.signOut(() => navigate("/"));
+          auth.signOut(() => onClick());
         }}
       >
         Sign out
-      </button>
-    </p>
+      </Button>
+    </Paragraph>
   );
 };
 
