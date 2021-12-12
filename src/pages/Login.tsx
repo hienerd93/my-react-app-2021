@@ -1,16 +1,18 @@
 import { Button, Typography } from "antd";
+import { AppPath, AuthContextType } from "data";
+import { useAuth } from "hooks";
+import { FormEvent } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import useAuth from "../hooks/useAuth";
 
 const LoginPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const auth: any = useAuth();
+  const auth: AuthContextType = useAuth();
   const { Paragraph } = Typography;
 
-  const from = location.state?.from?.pathname || "/dashboard";
+  const from = location.state?.from?.pathname || AppPath.DASHBOARD;
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);

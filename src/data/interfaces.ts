@@ -1,10 +1,5 @@
-export interface Author {
-  name: string;
-  gitName: string;
-}
-
 export interface AuthContextType {
-  user: any;
+  user: string;
   signIn: (user: string, callback: VoidFunction) => void;
   signOut: (callback: VoidFunction) => void;
 }

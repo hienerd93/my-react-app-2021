@@ -1,7 +1,7 @@
+import AuthStatus from "components/AuthStatus";
+import { AppPath, AuthContextType } from "data";
+import { useAuth } from "hooks";
 import { Link, Outlet, useNavigate } from "react-router-dom";
-import AuthStatus from "../components/AuthStatus";
-import { AuthContextType } from "../data/interfaces";
-import useAuth from "../hooks/useAuth";
 
 const Layout = () => {
   const auth: AuthContextType = useAuth();
@@ -13,7 +13,7 @@ const Layout = () => {
 
       <ul>
         <li>
-          <Link to="/dashboard">Dashboard</Link>
+          <Link to={AppPath.DASHBOARD}>Dashboard</Link>
         </li>
       </ul>
 

@@ -1,5 +1,5 @@
+import { useAuth } from "hooks";
 import { Navigate, useLocation } from "react-router-dom";
-import useAuth from "../hooks/useAuth";
 
 const RequireAuth = ({ children }: { children: JSX.Element }) => {
   const auth = useAuth();
@@ -12,4 +12,4 @@ const RequireAuth = ({ children }: { children: JSX.Element }) => {
   return children;
 };
 
-export default RequireAuth;
+export { RequireAuth };

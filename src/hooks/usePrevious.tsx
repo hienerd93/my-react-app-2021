@@ -8,4 +8,4 @@ function usePrevious<T>(arg: T) {
   return ref.current;
 }
 
-export default usePrevious;
+export { usePrevious };

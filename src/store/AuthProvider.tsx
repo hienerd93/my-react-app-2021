@@ -1,11 +1,11 @@
+import { AuthContextType } from "data";
 import { createContext, ReactNode, useState } from "react";
 import { fakeAuthProvider } from "./fakeAuthProvider";
-import { AuthContextType } from "../data/interfaces";
 
 export const AuthContext = createContext<AuthContextType>(null!);
 
 const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<string>("");
 
   const signIn = (newUser: string, callback: VoidFunction) => {
     return fakeAuthProvider.signIn(() => {
@@ -16,7 +16,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const signOut = (callback: VoidFunction) => {
     return fakeAuthProvider.signOut(() => {
-      setUser(null);
+      setUser("");
       callback();
     });
   };
@@ -26,4 +26,4 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
-export default AuthProvider;
+export { AuthProvider };

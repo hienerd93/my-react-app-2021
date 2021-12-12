@@ -1,5 +1,5 @@
 import { Button, Typography } from "antd";
-import { AuthContextType } from "../data/interfaces";
+import { AuthContextType } from "data";
 
 type AuthStatusProps = {
   auth: AuthContextType;
