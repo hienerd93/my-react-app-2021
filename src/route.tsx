@@ -1,9 +1,9 @@
+import { RequireAuth } from "auth";
 import { AppPath } from "data";
 import DashBoard from "pages/DashBoard";
 import Layout from "pages/Layout";
 import LoginPage from "pages/Login";
 import { Route, Routes } from "react-router-dom";
-import { RequireAuth } from "utils";
 
 const AppRoutes = () => {
   return (
