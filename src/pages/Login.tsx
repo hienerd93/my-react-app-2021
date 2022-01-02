@@ -1,6 +1,6 @@
-import { Button, Typography } from "antd";
+import { Typography } from "antd";
+import { useAuth } from "auth";
 import { AppPath, AuthContextType } from "data";
-import { useAuth } from "hooks";
 import { FormEvent } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -31,7 +31,7 @@ const LoginPage = () => {
         <label>
           Username: <input name="username" type="text" />
         </label>{" "}
-        <Button>Login</Button>
+        <input type="submit" value="Login" />
       </form>
     </div>
   );

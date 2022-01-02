@@ -9,12 +9,12 @@ const App = () => {
   const { Title } = Typography;
 
   return (
-    <Provider store={store}>
-      <AuthProvider>
+    <AuthProvider>
+      <Provider store={store}>
         <Title>Pokemon Tab</Title>
         <AppRoutes />
-      </AuthProvider>
-    </Provider>
+      </Provider>
+    </AuthProvider>
   );
 };
 
