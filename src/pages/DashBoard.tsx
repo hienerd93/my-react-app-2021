@@ -1,9 +1,12 @@
 import { Typography } from "antd";
+import { useSelector } from "react-redux";
 import { useGetPokemonByNameQuery } from "services/pokemon";
+import { RootState } from "store";
 
 const DashBoard = () => {
   const { Text } = Typography;
   const { data, error, isLoading } = useGetPokemonByNameQuery("bulbasaur");
+  const count = useSelector((state: RootState) => state.counter.value);
 
   return (
     <>
@@ -18,6 +21,7 @@ const DashBoard = () => {
           <img src={data.sprites.front_shiny} alt={data.species.name} />
         </>
       ) : null}
+      <span>{count}</span>
     </>
   );
 };
