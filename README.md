@@ -4,30 +4,40 @@ App for learn react as a web dev and make statistical web
 
 ## Architecture
 
-### Stack
+### Flat Structure
 
-* components
+#### Data
 
-* hooks
-
-  * `[customHook].ts`
-
-* core
+* data
 
   * `interfaces.ts`
 
   * `constants.ts`
 
+* services
+
+* slices
+
+* `store.ts`
+
+#### View
+
+* assets
+
+* components
+
+#### Logic
+
 * utils
 
   * `[module].ts`
 
-* store
-
 * pages
 
-* `[stack].tsx`
+* hooks
 
-### Stack in Stack = App
+  * `[customHook].ts`
 
-App have one more other parts: `assets`(img + css)
+* `route.ts`
+
+* auth

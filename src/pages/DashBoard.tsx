@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { useGetPokemonByNameQuery } from "services/pokemon";
 import { RootState } from "store";
 import { Image, Typography } from "antd";
+import { getRestOfYear } from "utils";
 
 const DashBoard = () => {
   const { Text, Title, Paragraph } = Typography;
@@ -28,6 +29,7 @@ const DashBoard = () => {
         )
       )}
       <Paragraph>{count}</Paragraph>
+      <Paragraph>{getRestOfYear()}</Paragraph>
     </>
   );
 };
