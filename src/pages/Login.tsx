@@ -29,7 +29,7 @@ const LoginPage = () => {
 
       <Form
         name="basic"
-        labelCol={{ span: 8 }}
+        labelCol={{ span: 4 }}
         wrapperCol={{ span: 16 }}
         initialValues={{ remember: true }}
         onFinish={onFinish}
@@ -44,7 +44,7 @@ const LoginPage = () => {
           <Input />
         </Form.Item>
 
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+        <Form.Item wrapperCol={{ offset: 4, span: 16 }}>
           <Button type="primary" htmlType="submit">
             Submit
           </Button>

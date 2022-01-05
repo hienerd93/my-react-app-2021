@@ -6,7 +6,7 @@ import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useGetPokemonByNameQuery } from "services/pokemon";
 import { decrement, increment } from "slices/counter";
 import { RootState } from "store";
-import { Image, Typography, Layout, Menu, Button } from "antd";
+import { Image, Typography, Layout, Menu, Button, Divider } from "antd";
 
 const LayoutApp = () => {
   const auth: AuthContextType = useAuth();
@@ -15,7 +15,7 @@ const LayoutApp = () => {
   const count = useSelector((state: RootState) => state.counter.value);
   const dispatch = useDispatch();
   const { data, error, isLoading } = useGetPokemonByNameQuery("bulbasaur");
-  const { Title, Paragraph } = Typography;
+  const { Title, Text } = Typography;
   const { Header, Footer, Content } = Layout;
 
   return (
@@ -26,9 +26,9 @@ const LayoutApp = () => {
             <Link to={AppPath.DASHBOARD}>Dashboard</Link>
           </Menu.Item>
         </Menu>
-        <AuthStatus auth={auth} onClick={() => navigate("/")} />
       </Header>
       <Content>
+        <AuthStatus auth={auth} onClick={() => navigate("/")} />
         {location.pathname === "/" && (
           <>
             {error ? (
@@ -48,13 +48,14 @@ const LayoutApp = () => {
                 </>
               )
             )}
+            <Divider />
             <Button
               aria-label="Increment value"
               onClick={() => dispatch(increment())}
             >
               Increment
             </Button>
-            <Paragraph>{count}</Paragraph>
+            <Text>{count}</Text>
             <Button
               aria-label="Decrement value"
               onClick={() => dispatch(decrement())}
@@ -63,7 +64,7 @@ const LayoutApp = () => {
             </Button>
           </>
         )}
-
+        <Divider />
         <Outlet />
       </Content>
       <Footer>Footer</Footer>
