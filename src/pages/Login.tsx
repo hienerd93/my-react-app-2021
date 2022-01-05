@@ -1,7 +1,6 @@
-import { Typography } from "antd";
+import { Typography, Form, Input, Button } from "antd";
 import { useAuth } from "auth";
 import { AppPath, AuthContextType } from "data";
-import { FormEvent } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
@@ -12,28 +11,46 @@ const LoginPage = () => {
 
   const from = location.state?.from?.pathname || AppPath.DASHBOARD;
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    const formData = new FormData(event.currentTarget);
-    const username = formData.get("username") as string;
+  const onFinish = (event: { username: string }) => {
+    const { username } = event;
 
     auth.signIn(username, () => {
       navigate(from, { replace: true });
     });
-  }
+  };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log("Failed:", errorInfo);
+  };
 
   return (
-    <div>
+    <>
       <Paragraph>You must log in to view the page at {from}</Paragraph>
 
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username: <input name="username" type="text" />
-        </label>{" "}
-        <input type="submit" value="Login" />
-      </form>
-    </div>
+      <Form
+        name="basic"
+        labelCol={{ span: 8 }}
+        wrapperCol={{ span: 16 }}
+        initialValues={{ remember: true }}
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
+        autoComplete="off"
+      >
+        <Form.Item
+          label="Username"
+          name="username"
+          rules={[{ required: true, message: "Please input your username!" }]}
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+          <Button type="primary" htmlType="submit">
+            Submit
+          </Button>
+        </Form.Item>
+      </Form>
+    </>
   );
 };
 

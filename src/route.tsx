@@ -1,14 +1,14 @@
 import { RequireAuth } from "auth";
 import { AppPath } from "data";
 import DashBoard from "pages/DashBoard";
-import Layout from "pages/Layout";
+import LayoutApp from "pages/LayoutApp";
 import LoginPage from "pages/Login";
 import { Route, Routes } from "react-router-dom";
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route element={<Layout />}>
+      <Route element={<LayoutApp />}>
         <Route path="/" element={<LoginPage />} />
         <Route
           path={AppPath.DASHBOARD}
