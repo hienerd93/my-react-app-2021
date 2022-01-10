@@ -4,7 +4,7 @@ import { AppPath, AuthContextType } from "data";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useGetPokemonByNameQuery } from "services/pokemon";
-import { decrement, increment } from "slices/counter";
+import { decrement, increment } from "features/counter";
 import { RootState } from "store";
 import { Image, Typography, Layout, Menu, Button, Divider } from "antd";
 
