@@ -1,3 +1,1 @@
-export enum AppPath {
-  DASHBOARD = "/dashboard",
-}
+export const AUTHOR = "hienerd93";
