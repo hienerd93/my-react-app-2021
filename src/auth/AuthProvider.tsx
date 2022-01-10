@@ -1,4 +1,4 @@
-import { AuthContextType } from "data";
+import { AuthContextType } from "core";
 import { createContext, ReactNode, useState } from "react";
 import { fakeAuthProvider } from "./fakeAuthProvider";
 

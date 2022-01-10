@@ -1,6 +1,6 @@
 import { useAuth } from "auth";
 import AuthStatus from "components/AuthStatus";
-import { AppPath, AuthContextType, AUTHOR } from "data";
+import { AppPath, AuthContextType, AUTHOR } from "core";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useGetPokemonByNameQuery } from "services/pokemon";

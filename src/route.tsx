@@ -1,5 +1,5 @@
 import { RequireAuth } from "auth";
-import { AppPath } from "data";
+import { AppPath } from "core";
 import App from "pages/App";
 import DashBoard from "pages/DashBoard";
 import LoginPage from "pages/Login";

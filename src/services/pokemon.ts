@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { Pokemon } from "data";
+import { Pokemon } from "core";
 // TODO: graphql extends
 // import { request, gql, ClientError } from "graphql-request";
 

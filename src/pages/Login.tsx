@@ -1,6 +1,6 @@
 import { Typography, Form, Input, Button } from "antd";
 import { useAuth } from "auth";
-import { AppPath, AuthContextType } from "data";
+import { AppPath, AuthContextType } from "core";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
