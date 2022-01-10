@@ -16,7 +16,7 @@ App for learn react as a web dev and make statistical web
 
 * services
 
-* slices
+* features
 
 * `store.ts`
 
