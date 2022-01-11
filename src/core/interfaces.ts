@@ -1,6 +1,11 @@
+export interface User {
+  username: string;
+  password: string;
+}
+
 export interface AuthContextType {
-  user: string;
-  signIn: (user: string, callback: VoidFunction) => void;
+  user: User;
+  signIn: (user: User, callback: VoidFunction) => void;
   signOut: (callback: VoidFunction) => void;
 }
 

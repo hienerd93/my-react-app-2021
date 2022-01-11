@@ -1,6 +1,6 @@
 import { useAuth } from "auth";
 import AuthStatus from "components/AuthStatus";
-import { AppPath, AuthContextType, AUTHOR } from "core";
+import { AppPath, AuthContextType } from "core";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useGetPokemonByNameQuery } from "services/pokemon";
@@ -67,7 +67,7 @@ const LayoutApp = () => {
         <Divider />
         <Outlet />
       </Content>
-      <Footer>{AUTHOR}</Footer>
+      <Footer>Footer</Footer>
     </Layout>
   );
 };

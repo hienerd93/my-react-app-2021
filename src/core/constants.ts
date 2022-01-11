@@ -1,1 +1,4 @@
-export const AUTHOR = "hienerd93";
+export const AUTHOR = {
+  username: "hienerd93",
+  password: "Abdc123$",
+};

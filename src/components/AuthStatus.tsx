@@ -8,13 +8,13 @@ type AuthStatusProps = {
 
 const AuthStatus = ({ auth, onClick }: AuthStatusProps) => {
   const { Paragraph } = Typography;
-  if (!auth.user) {
+  if (!auth.user.username) {
     return <Paragraph>You are not logged in.</Paragraph>;
   }
 
   return (
     <Paragraph>
-      Welcome {auth.user}!{" "}
+      Welcome {auth.user.username}!{" "}
       <Button
         onClick={() => {
           auth.signOut(() => onClick());
